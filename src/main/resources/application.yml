@@ -1,0 +1,23 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: eureka-user
+  cloud:
+    config:
+      discovery:
+        service-id: eureka-config
+        enabled: true
+      name: eureka-config
+      profile: dev
+eureka:
+  instance:
+    hostname: localhost:8001
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}/eureka/
+    registry-fetch-interval-seconds: 30
+    fetch-registry: true

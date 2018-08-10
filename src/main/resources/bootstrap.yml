@@ -1,0 +1,7 @@
+project:
+  project-uri: localhost
+  port: 8002
+spring:
+  cloud:
+    config:
+      uri: http://${project.project-uri}:${project.port}
